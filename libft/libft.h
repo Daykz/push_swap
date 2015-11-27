@@ -6,7 +6,7 @@
 /*   By: dmathe <dmathe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:40:20 by dmathe            #+#    #+#             */
-/*   Updated: 2015/11/27 16:35:13 by dmathe           ###   ########.fr       */
+/*   Updated: 2015/11/27 18:17:08 by dmathe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # define A			0
 # define INDICE		1
 # define RET		2
+# include <limits.h>
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -53,7 +54,7 @@ char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strdup(const char *s1);
 size_t				ft_strlen(const char *s);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
-int					ft_atoi(const char *str);
+int					ft_atoi(char *str);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strstr(const char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
