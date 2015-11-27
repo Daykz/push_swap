@@ -12,13 +12,11 @@
 
 #include "libft.h"
 
-void	list_remove(t_list **list, t_list *link)
+void		list_remove(t_list **list, t_list *link)
 {
-	t_list *tmp;
-	t_list *rem;
+	t_list	*tmp;
 
-	tmp = (*list);
-	rem = NULL;
+	tmp = *list;
 	if (tmp && link)
 	{
 		if (*list == link)
@@ -35,16 +33,10 @@ void	list_remove(t_list **list, t_list *link)
 			tmp = tmp->next;
 		}
 		if (tmp == list_end(*list))
-		{
 			tmp->next = NULL;
-			free(link);
-			link = NULL;
-		}
 		else
-		{
 			tmp->next = tmp->next->next;
-			free(link);
-			link = NULL;
-		}
+		free(link);
+		link = NULL;
 	}
 }

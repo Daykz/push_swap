@@ -6,7 +6,7 @@
 /*   By: dmathe <dmathe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/10 18:52:04 by dmathe            #+#    #+#             */
-/*   Updated: 2014/11/10 18:52:48 by dmathe           ###   ########.fr       */
+/*   Updated: 2015/11/27 16:28:59 by dmathe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putstr_fd(char const *s, int fd)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		write (fd, &s[i], 1);
+		write(fd, &s[i], 1);
 		i++;
 	}
 }

@@ -6,7 +6,7 @@
 #    By: dmathe <dmathe@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/12 13:11:10 by dmathe            #+#    #+#              #
-#    Updated: 2015/11/18 12:04:34 by dmathe           ###   ########.fr        #
+#    Updated: 2015/11/27 16:35:31 by dmathe           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ PO = ft_strsplit.o ft_memccpy.o ft_putnbr.o ft_strequ.o ft_strnequ.o \
 	ft_isascii.o ft_putchar.o ft_strcmp.o ft_strmapi.o ft_toupper.o \
 	ft_isdigit.o ft_putchar_fd.o ft_strcpy.o ft_strncat.o ft_strtrim.o \
 	ft_isprint.o ft_putendl.o ft_strdel.o ft_strncmp.o \
-	link_init.o list_add.o list_end.o list_remove.o \
+	link_init.o list_add.o list_end.o list_remove.o\
 	list_second.o list_size.o list_swap_data.o \
 	get_next_line.o ft_getnbr.o ft_strsplit.o list_second.o \
 	ft_memalloc.o ft_putendl_fd.o ft_strdup.o ft_strncpy.o list_end.o

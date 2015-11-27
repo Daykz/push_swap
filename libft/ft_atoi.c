@@ -6,13 +6,13 @@
 /*   By: dmathe <dmathe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 14:42:43 by dmathe            #+#    #+#             */
-/*   Updated: 2015/02/19 19:10:54 by dmathe           ###   ########.fr       */
+/*   Updated: 2015/11/27 16:25:24 by dmathe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int					ft_atoi(const char *str)
 {
 	unsigned int	digit;
 	int				positive;
@@ -30,7 +30,7 @@ int		ft_atoi(const char *str)
 		str++;
 	if (ft_strlen(str) > 19)
 		return (positive == 1 ? -1 : 0);
-	while (ft_isdigit (*str) && *str != '\0')
+	while (ft_isdigit(*str) && *str != '\0')
 	{
 		digit = (int)(*str - '0');
 		value = (value * 10) + digit;

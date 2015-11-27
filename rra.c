@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	r_reverse_a(t_list **list)
+void	r_reverse_a(t_list **list, t_opt *opt)
 {
 	t_list	*tmp;
 	t_list	*link;
@@ -24,5 +24,8 @@ void	r_reverse_a(t_list **list)
 		list_swap_data(tmp, link);
 		tmp = tmp->next;
 	}
-	ft_putstr("rra ");
+	if (opt->c == 1)
+		putcolor("rra ", BOLD_GREEN);
+	else
+		ft_putstr("rra ");
 }

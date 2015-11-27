@@ -6,7 +6,7 @@
 /*   By: dmathe <dmathe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/18 19:58:24 by dmathe            #+#    #+#             */
-/*   Updated: 2015/11/18 12:43:03 by dmathe           ###   ########.fr       */
+/*   Updated: 2015/11/27 16:56:39 by dmathe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,17 @@ int		sort_a_b(t_list *list, t_listb *listb, t_opt *opt)
 		{
 			min = check_pos_min(list);
 			if (min == (int)list_size(list))
-				r_reverse_a(&list);
+				r_reverse_a(&list, opt);
 			else if (min == 1)
-				push_b(&list, &listb);
+				push_b(&list, &listb, opt);
 			else if (min <= ((int)list_size(list)) / 2)
-				reverse_a(&list);
+				reverse_a(&list, opt);
 			else if (min > ((int)list_size(list)) / 2)
-				r_reverse_a(&list);
-			print_list(list, opt);
-			print_listb(listb, opt);
+				r_reverse_a(&list, opt);
+			print(list, opt, listb);
 		}
 		while (listb)
-			push_a(&list, &listb);
+			push_a(&list, &listb, opt);
 	}
 	print_list(list, opt);
 	return (0);
@@ -76,23 +75,21 @@ int		sort(t_list *list, t_listb *listb, t_opt *opt)
 	{
 		min = check_pos_min(list);
 		if (min == (int)list_size(list))
-			r_reverse_a(&list);
+			r_reverse_a(&list, opt);
 		else if (min == 1)
-			push_b(&list, &listb);
-		else if (min <= ((int)list_size(list)) / 2 && (min != 2))
-			reverse_a(&list);
-		else if ((min > ((int)list_size(list)) / 2) && (min != 2))
-			r_reverse_a(&list);
+			push_b(&list, &listb, opt);
+		else if (min <= ((int)list_size(list)) / 2)
+			reverse_a(&list, opt);
+		else if ((min > ((int)list_size(list)) / 2))
+			r_reverse_a(&list, opt);
 		else if (*(int *)list < *((int *)list_second(list)))
-			swap_a(&list);
+			swap_a(&list, opt);
 		if ((int)(list_size((t_list *)listb)) >= (len / 2))
 		{
 			sort_a_b(list, listb, opt);
 			return (1);
 		}
-		ft_putchar('\n');
-		print_list(list, opt);
-		print_listb(listb, opt);
+		print(list, opt, listb);
 	}
 	return (0);
 }

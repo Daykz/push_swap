@@ -6,7 +6,7 @@
 /*   By: dmathe <dmathe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:40:20 by dmathe            #+#    #+#             */
-/*   Updated: 2015/11/18 12:23:41 by dmathe           ###   ########.fr       */
+/*   Updated: 2015/11/27 16:35:13 by dmathe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 typedef struct		s_list
 {
 	void			*data;
-	struct s_list 	*next;
+	struct s_list	*next;
 	struct s_list	*prev;
 }					t_list;
 
@@ -82,16 +82,16 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 void				ft_strdel(char **as);
 size_t				list_size(t_list *list);
-t_list 				*link_init(void *data);
-t_list 				*list_end(t_list *list);
+t_list				*link_init(void *data);
+t_list				*list_end(t_list *list);
 t_list				*list_second(t_list *list);
-void 				list_swap_data(t_list *l1, t_list *l2);
-void				list_remove(t_list **list, t_list *link);
+void				list_swap_data(t_list *l1, t_list *l2);
 void				list_add_next(t_list **list, t_list *link);
 int					get_next_line(int const fd, char **line);
 int					ft_getnbr(char *str);
 t_list				*list_befend(t_list *list);
 t_list				*list_end(t_list *list);
 t_list				*list_second(t_list *list);
+void				list_remove(t_list **list, t_list *link);
 
 #endif

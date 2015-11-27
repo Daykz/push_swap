@@ -6,13 +6,13 @@
 /*   By: dmathe <dmathe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/16 18:49:15 by dmathe            #+#    #+#             */
-/*   Updated: 2015/11/18 12:06:24 by dmathe           ###   ########.fr       */
+/*   Updated: 2015/11/27 16:28:36 by dmathe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*list_befend(t_list *list)
+t_list		*list_befend(t_list *list)
 {
 	t_list *link;
 
@@ -26,9 +26,9 @@ t_list	*list_befend(t_list *list)
 	return (link);
 }
 
-t_list *list_end(t_list *list)
+t_list		*list_end(t_list *list)
 {
-	t_list *link;
+	t_list	*link;
 
 	link = NULL;
 	if (list)

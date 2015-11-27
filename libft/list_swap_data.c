@@ -6,16 +6,16 @@
 /*   By: dmathe <dmathe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/16 18:51:03 by dmathe            #+#    #+#             */
-/*   Updated: 2015/06/16 18:53:32 by dmathe           ###   ########.fr       */
+/*   Updated: 2015/11/27 16:26:29 by dmathe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	list_swap_data(t_list *l1, t_list *l2)
+void		list_swap_data(t_list *l1, t_list *l2)
 {
-	void *tmp;
-	
+	void	*tmp;
+
 	tmp = NULL;
 	if (l1 && l2)
 	{
