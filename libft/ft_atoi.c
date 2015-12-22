@@ -23,20 +23,20 @@ int		check_min(char *str)
 		{
 			write(2, "Error\n", 6);
 			exit(0);
-		}			
+		}
 	}
 	else if (ft_strlen(str) > ft_strlen(str_min))
-		{
-			write(2, "Error\n", 6);
-			exit(0);	
-		}
+	{
+		write(2, "Error\n", 6);
+		exit(0);
+	}
 	return (0);
 }
 
-int 	check_str(char *str)
+int		check_str(char *str)
 {
 	char	*str_max;
-	int 	i;
+	int		i;
 
 	i = 0;
 	str_max = ft_itoa(INT_MAX);
@@ -48,13 +48,13 @@ int 	check_str(char *str)
 		{
 			write(2, "Error\n", 6);
 			exit(0);
-		}			
+		}
 	}
 	else if (ft_strlen(str) > ft_strlen(str_max))
-		{
-			write(2, "Error\n", 6);
-			exit(0);	
-		}
+	{
+		write(2, "Error\n", 6);
+		exit(0);
+	}
 	return (1);
 }
 

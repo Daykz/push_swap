@@ -19,5 +19,6 @@ t_list	*link_init(void *data)
 	new_link = malloc(sizeof(*new_link));
 	new_link->data = data;
 	new_link->next = NULL;
+	new_link->prev = NULL;
 	return (new_link);
 }

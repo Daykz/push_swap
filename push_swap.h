@@ -30,8 +30,11 @@ typedef struct		s_opt
 {
 	int				v;
 	int				c;
+	int				min;
+	int				len;
 }					t_opt;
 
+int					check_end(t_list *list, t_listb *listb, t_opt *opt);
 void				print(t_list *list, t_opt *opt, t_listb *listb);
 void				print_list(t_list *list, t_opt *opt);
 void				print_listb(t_listb *list, t_opt *opt);

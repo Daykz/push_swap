@@ -36,9 +36,9 @@ void	print_list(t_list *list, t_opt *opt)
 				list = list->next;
 			}
 			if (opt->c == 1)
-				putcolor("}", RED);
+				putcolor("}\n", RED);
 			else
-				ft_putchar('}');
+				ft_putstr("}\n");
 		}
 	}
 }

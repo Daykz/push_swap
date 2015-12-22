@@ -14,7 +14,7 @@
 
 void		list_add_next(t_list **list, t_list *link)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = *list;
 	if (link)
@@ -26,6 +26,8 @@ void		list_add_next(t_list **list, t_list *link)
 			while (tmp->next)
 				tmp = tmp->next;
 			tmp->next = link;
+			link->prev = tmp;
+			link->next = NULL;
 		}
 	}
 }

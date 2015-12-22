@@ -17,6 +17,8 @@ void		init_opt(t_opt *opt)
 	opt = NULL;
 	opt->v = 0;
 	opt->c = 0;
+	opt->len = 0;
+	opt->min = 0;
 }
 
 int			check_pos_max(t_list *list)

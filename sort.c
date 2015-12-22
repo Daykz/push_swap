@@ -67,24 +67,23 @@ int		sort_a_b(t_list *list, t_listb *listb, t_opt *opt)
 
 int		sort(t_list *list, t_listb *listb, t_opt *opt)
 {
-	int	min;
-	int	len;
-
-	len = (int)list_size(list);
+	opt->len = (int)list_size(list);
 	while (check_good(list, listb) == 0)
 	{
-		min = check_pos_min(list);
-		if (min == (int)list_size(list))
+		opt->min = check_pos_min(list);
+		if (check_end(list, listb, opt) == 1)
+			return (1);
+		else if (opt->min == (int)list_size(list))
 			r_reverse_a(&list, opt);
-		else if (min == 1)
+		else if (opt->min == 1)
 			push_b(&list, &listb, opt);
-		else if (min <= ((int)list_size(list)) / 2)
+		else if (opt->min <= ((int)list_size(list)) / 2 && opt->min != 2)
 			reverse_a(&list, opt);
-		else if ((min > ((int)list_size(list)) / 2))
+		else if (opt->min > ((int)list_size(list)) / 2 && opt->min != 2)
 			r_reverse_a(&list, opt);
 		else if (*(int *)list < *((int *)list_second(list)))
 			swap_a(&list, opt);
-		if ((int)(list_size((t_list *)listb)) >= (len / 2))
+		if ((int)(list_size((t_list *)listb)) >= (opt->len / 2))
 		{
 			sort_a_b(list, listb, opt);
 			return (1);

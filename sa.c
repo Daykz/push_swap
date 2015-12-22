@@ -32,5 +32,6 @@ void			swap_a(t_list **list, t_opt *opt)
 	list_swap_data(*list, list_second(*list));
 	if (opt->c == 1)
 		putcolor("sa ", BOLD_GREEN);
-	ft_putstr("sa ");
+	else
+		ft_putstr("sa ");
 }
