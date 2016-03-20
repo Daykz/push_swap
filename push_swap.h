@@ -31,6 +31,7 @@ typedef struct		s_opt
 	int				v;
 	int				c;
 	int				min;
+	int 			last_min;
 	int				len;
 }					t_opt;
 
@@ -61,5 +62,6 @@ void				r_reverse_b(t_listb **listb, t_opt *opt);
 void				push_a(t_list **list, t_listb **listb, t_opt *opt);
 void				push_b(t_list **list, t_listb **listb, t_opt *opt);
 int					check_param(char **param, int len);
+int 				check_pos_last_min(t_list *list);
 
 #endif

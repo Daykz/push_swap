@@ -18,6 +18,7 @@ void		init_opt(t_opt *opt)
 	opt->v = 0;
 	opt->c = 0;
 	opt->len = 0;
+	opt->last_min = 0;
 	opt->min = 0;
 }
 
@@ -35,6 +36,36 @@ int			check_pos_max(t_list *list)
 		j++;
 		list = list->next;
 		if (*(int *)list->data > value)
+		{
+			value = *(int *)list->data;
+			i = j;
+		}
+	}
+	return ((i == 0) ? 1 : i);
+}
+
+int 		check_pos_last_min(t_list *list)
+{
+	int 	min;
+	int		value;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 1;
+	min = check_pos_min(list);
+	value = *(int *)list->data;
+	if (min == 1)
+	{
+		value = *(int *)list->next->data;
+	}
+	while (list->next)
+	{
+		j++;
+		list = list->next;
+		if (j == min)
+			;
+		else if (*(int *)list->data < value)
 		{
 			value = *(int *)list->data;
 			i = j;
