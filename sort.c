@@ -11,10 +11,30 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//////
-#include <stdio.h>
-//////
 
+int		check_easy(t_list *list, t_opt *opt)
+{
+	t_list	*tmp;
+	int		i;
+
+	tmp = list;
+	i = 1;
+	while (tmp->next)
+	{
+		if (*(int *)tmp->next->data > *(int *)tmp->data)
+			return (0);
+		tmp = tmp->next;
+		i++;
+	}
+	if (i == 3)
+	{
+		swap_a(&list, opt);
+		print_list(list, opt);
+		r_reverse_a(&list, opt);
+		print_list(list, opt);
+	}
+	return (1);
+}
 
 int		check_opt(char *bonus, t_opt *opt)
 {
@@ -46,15 +66,12 @@ void	putcolor(char *str, char *color)
 int		sort_a_b(t_list *list, t_listb *listb, t_opt *opt)
 {
 	int	min;
-	int last_min;
 
 	if (check_good_b((t_list *)listb) == 1)
 	{
 		while (check_good_a(list) == 0)
 		{
 			min = check_pos_min(list);
-			last_min = check_pos_last_min(list);
-			printf("last_min = %d, min = %d\n", last_min, min);
 			if (min == (int)list_size(list))
 				r_reverse_a(&list, opt);
 			else if (min == 1)
@@ -78,8 +95,6 @@ int		sort(t_list *list, t_listb *listb, t_opt *opt)
 	while (check_good(list, listb) == 0)
 	{
 		opt->min = check_pos_min(list);
-		opt->last_min = check_pos_last_min(list);
-		printf("last_min = %d, min = %d\n", opt->last_min, opt->min);
 		if (check_end(list, listb, opt) == 1)
 			return (1);
 		else if (opt->min == (int)list_size(list))

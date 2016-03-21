@@ -12,6 +12,20 @@
 
 #include "push_swap.h"
 
+void		end(t_list *list, t_listb *listb, t_opt *opt)
+{
+	r_reverse_a(&list, opt);
+	print(list, opt, listb);
+	r_reverse_a(&list, opt);
+	print(list, opt, listb);
+	swap_a(&list, opt);
+	print(list, opt, listb);
+	reverse_a(&list, opt);
+	print(list, opt, listb);
+	reverse_a(&list, opt);
+	print(list, opt, listb);
+}
+
 void		r_r_a(t_list **list)
 {
 	t_list	*tmp;

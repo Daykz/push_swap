@@ -11,38 +11,19 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h> /////////
-
-int		check_easy(t_list *list, t_opt *opt)
-{
-	t_list	*tmp;
-	int		i;
-
-	tmp = list;
-	i = 1;
-	while (tmp->next)
-	{
-		if (*(int *)tmp->next->data > *(int *)tmp->data)
-			return (0);
-		tmp = tmp->next;
-		i++;
-	}
-	if (i == 3)
-	{
-		swap_a(&list, opt);
-		print_list(list, opt);
-		r_reverse_a(&list, opt);
-		print_list(list, opt);
-	}
-	return (1);
-}
 
 int		check_end(t_list *list, t_listb *listb, t_opt *opt)
 {
 	t_list *tmp;
 
 	tmp = list;
-	check_easy(list, opt);
+	if (opt->len < 5)
+	{
+		if (check_easy(list, opt) == 1)
+			return (1);
+	}
+	if (listb != NULL)
+		return (0);
 	while (tmp->next->next)
 	{
 		if (*(int *)tmp->next->data < *(int *)tmp->data)
@@ -51,20 +32,9 @@ int		check_end(t_list *list, t_listb *listb, t_opt *opt)
 	}
 	if (*(int *)tmp->next->data < *(int *)tmp->data &&
 		*(int *)tmp->next->data > *(int *)tmp->prev->data)
-	{
-		r_reverse_a(&list, opt);
-		print(list, opt, listb);
-		r_reverse_a(&list, opt);
-		print(list, opt, listb);
-		swap_a(&list, opt);
-		print(list, opt, listb);
-		reverse_a(&list, opt);
-		print(list, opt, listb);
-		reverse_a(&list, opt);
-		print(list, opt, listb);
-	}
-	if (listb != NULL)
-		sort_a_b(list, listb, opt);
+		end(list, listb, opt);
+	else
+		return (0);
 	return (1);
 }
 
@@ -77,7 +47,6 @@ int		check_param(char **param, int len)
 	i = -1;
 	while (len != ++i)
 	{
-
 		while (param[len][j] != '\0')
 		{
 			if ((param[len][j] <= 57 && param[len][j] >= 48) || \
@@ -127,7 +96,9 @@ int		check_good(t_list *list, t_listb *listb)
 	while (list->next)
 	{
 		if (*(int *)list->next->data < *(int *)list->data)
+		{
 			return (0);
+		}
 		list = list->next;
 	}
 	return (1);
