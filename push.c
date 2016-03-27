@@ -46,9 +46,11 @@ void		push_a(t_list **list, t_listb **listb, t_opt *opt)
 	r_r_a(list);
 	list_remove((t_list **)listb, list_end((t_list *)*listb));
 	if (opt->c == 1)
-		putcolor("pa ", BOLD_GREEN);
+		putcolor("pa", BOLD_GREEN);
 	else
-		ft_putstr("pa ");
+		ft_putstr("pa");
+	if (*listb)
+		ft_putchar(' ');
 }
 
 void		push_b(t_list **list, t_listb **listb, t_opt *opt)

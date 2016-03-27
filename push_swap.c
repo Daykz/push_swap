@@ -14,7 +14,6 @@
 
 void		init_opt(t_opt *opt)
 {
-	opt = NULL;
 	opt->v = 0;
 	opt->c = 0;
 	opt->len = 0;
@@ -72,11 +71,21 @@ int			push_swap(t_list *list, t_listb *listb, char **param)
 	int		i;
 
 	i = 1;
-	while (param[i][0] == '-')
+	init_opt(&opt);
+	while (param[i] && param[i][0] == '-')
 	{
+		if (!ft_strcmp(param[i], "-"))
+		{
+			write(2, "Error\n", 6);
+			return (0);
+		}
+		if (ft_isdigits(param[i]) == 1)
+			break ;
 		check_opt(param[i], &opt);
 		i++;
 	}
+	if (!ft_strcmp(param[1], "-vc") && !param[2])
+		return (0);
 	len = list_size(list);
 	sort(list, listb, &opt);
 	return (0);
@@ -94,8 +103,7 @@ int			main(int ac, char **av)
 	listb = NULL;
 	if (ac > 1)
 	{
-		while (av[i][0] == '-')
-			i++;
+		i = main_bis(av);
 		while (av[i])
 		{
 			nb = malloc(sizeof(int));

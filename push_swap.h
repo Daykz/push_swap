@@ -63,5 +63,8 @@ void				push_b(t_list **list, t_listb **listb, t_opt *opt);
 int					check_param(char **param, int len);
 void				end(t_list *list, t_listb *listb, t_opt *opt);
 int					check_easy(t_list *list, t_opt *opt);
+int					ft_isdigits(char *str);
+int					main_bis(char **param);
+int					sort_bis(t_list *list, t_listb *listb, t_opt *opt);
 
 #endif

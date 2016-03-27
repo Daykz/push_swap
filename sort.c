@@ -33,6 +33,11 @@ int		check_easy(t_list *list, t_opt *opt)
 		r_reverse_a(&list, opt);
 		print_list(list, opt);
 	}
+	if (i == 2 && *(int *)list->data > *(int *)list->next->data)
+	{
+		swap_a(&list, opt);
+		print_list(list, opt);
+	}
 	return (1);
 }
 
@@ -107,11 +112,10 @@ int		sort(t_list *list, t_listb *listb, t_opt *opt)
 			r_reverse_a(&list, opt);
 		else if (*(int *)list < *((int *)list_second(list)))
 			swap_a(&list, opt);
-		if ((int)(list_size((t_list *)listb)) >= (opt->len / 2))
-		{
-			sort_a_b(list, listb, opt);
+		else if (opt->min == 2)
+			reverse_a(&list, opt);
+		if (sort_bis(list, listb, opt) == 1)
 			return (1);
-		}
 		print(list, opt, listb);
 	}
 	return (0);
