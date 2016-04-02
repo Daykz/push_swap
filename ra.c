@@ -12,6 +12,17 @@
 
 #include "push_swap.h"
 
+int 	same_char(char *s1, char *s2)
+{
+	if (!ft_strcmp(s1, s2))
+		return (0);
+	if (!ft_strcmp(s1, "-0") && !ft_strcmp(s2, "0"))
+		return(0);
+	if (!ft_strcmp(s2, "-0") && !ft_strcmp(s1, "0"))
+		return(0);
+	return(1);
+}
+
 void	reverse_a(t_list **list, t_opt *opt)
 {
 	list_add_next(list, link_init((*list)->data));
@@ -19,5 +30,7 @@ void	reverse_a(t_list **list, t_opt *opt)
 	if (opt->c == 1)
 		putcolor("ra ", BOLD_GREEN);
 	else
-		ft_putstr("ra ");
+		ft_putstr("ra");
+	if (opt->end == 0)
+		ft_putchar(' ');
 }

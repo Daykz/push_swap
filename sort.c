@@ -30,12 +30,16 @@ int		check_easy(t_list *list, t_opt *opt)
 	{
 		swap_a(&list, opt);
 		print_list(list, opt);
+		opt->end = 1;
 		r_reverse_a(&list, opt);
+		opt->end = 0;
 		print_list(list, opt);
 	}
 	if (i == 2 && *(int *)list->data > *(int *)list->next->data)
 	{
+		opt->len = 1;
 		swap_a(&list, opt);
+		opt->len = 0;
 		print_list(list, opt);
 	}
 	return (1);

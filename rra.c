@@ -27,5 +27,7 @@ void	r_reverse_a(t_list **list, t_opt *opt)
 	if (opt->c == 1)
 		putcolor("rra ", BOLD_GREEN);
 	else
-		ft_putstr("rra ");
+		ft_putstr("rra");
+	if (opt->end == 0)
+		ft_putchar(' ');
 }

@@ -12,6 +12,27 @@
 
 #include "push_swap.h"
 
+int 		no_char(char *str)
+{
+	int 	i;
+
+	i = 1;
+	if (!ft_strcmp(str, "-vc"))
+		return (1);
+	if (!ft_strcmp(str, "-v") || !ft_strcmp(str, "-c"))
+		return (1);
+	while (str[i])
+	{
+		if (str[i] < 48 || str[i] > 57)
+		{
+			write(2, "Error\n", 6);
+			return (0);
+		}
+		i++;
+	}
+	return (1);
+}
+
 void		end(t_list *list, t_listb *listb, t_opt *opt)
 {
 	r_reverse_a(&list, opt);
@@ -22,7 +43,9 @@ void		end(t_list *list, t_listb *listb, t_opt *opt)
 	print(list, opt, listb);
 	reverse_a(&list, opt);
 	print(list, opt, listb);
+	opt->end = 1;
 	reverse_a(&list, opt);
+	opt->end = 0;
 	print(list, opt, listb);
 }
 

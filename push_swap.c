@@ -18,6 +18,7 @@ void		init_opt(t_opt *opt)
 	opt->c = 0;
 	opt->len = 0;
 	opt->min = 0;
+	opt->end = 0;
 }
 
 int			check_pos_max(t_list *list)
@@ -74,6 +75,8 @@ int			push_swap(t_list *list, t_listb *listb, char **param)
 	init_opt(&opt);
 	while (param[i] && param[i][0] == '-')
 	{
+		if (!no_char(param[i]))
+			return (0);
 		if (!ft_strcmp(param[i], "-"))
 		{
 			write(2, "Error\n", 6);

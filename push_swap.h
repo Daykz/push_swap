@@ -32,8 +32,10 @@ typedef struct		s_opt
 	int				c;
 	int				min;
 	int				len;
+	int 			end;
 }					t_opt;
 
+int 				same_char(char *s1, char *s2);
 int					check_end(t_list *list, t_listb *listb, t_opt *opt);
 void				print(t_list *list, t_opt *opt, t_listb *listb);
 void				print_list(t_list *list, t_opt *opt);
@@ -66,5 +68,6 @@ int					check_easy(t_list *list, t_opt *opt);
 int					ft_isdigits(char *str);
 int					main_bis(char **param);
 int					sort_bis(t_list *list, t_listb *listb, t_opt *opt);
+int 				no_char(char *str);
 
 #endif

@@ -17,7 +17,7 @@ int		check_end(t_list *list, t_listb *listb, t_opt *opt)
 	t_list *tmp;
 
 	tmp = list;
-	if (opt->len < 5)
+	if (opt->len <= 3)
 	{
 		if (check_easy(list, opt) == 1)
 			return (1);
@@ -58,7 +58,7 @@ int		check_param(char **param, int len)
 				return (0);
 			}
 		}
-		if (ft_strcmp(param[len], param[i]) == 0)
+		if (!same_char(param[len], param[i]))
 		{
 			write(2, "Error\n", 6);
 			return (0);
